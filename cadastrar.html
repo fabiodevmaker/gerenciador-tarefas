@@ -1,0 +1,67 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styletask.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+    <title> Cadastro de Usuário </title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1> Cadastro </h1>
+        <br>
+        <script type="text/javascript">
+            function valida_campos() {
+                if (document.getElementById('nome').value == '') {
+                    alert('Por favor, certifique-se de preencher todos os campos!')
+                    document.getElementById('nome').focus();
+                    return false;
+                }
+                if (document.getElementById('login').value == '') {
+                    alert('Por favor, certifique-se de preencher todos os campos!')
+                    document.getElementById('login').focus();
+                    return false;
+                }
+                if (document.getElementById('login').value == document.getElementById('nome').value) {
+                    alert('Por favor, certifique-se de que seu nome não é igual ao seu login!')
+                    document.getElementById('login').focus();
+                    return false;
+                }
+                if (document.getElementById('senha').value == '') {
+                    alert('Por favor, certifique-se de preencher todos os campos!')
+                    document.getElementById('senha').focus();
+                    return false;
+                }
+                if (document.getElementById('senha2').value != document.getElementById('senha').value) {
+                    alert('Por favor, certifique-se de que suas senha conferem!')
+                    document.getElementById('senha2').focus();
+                    return false;
+                }
+            }
+        </script>
+    </div>
+    <form action="cadastro.php" method="POST" onSubmit="return valida_campos();">
+        <p><label>* Nome:</label></p>
+        <input type="text" name="nome" id="nome" autocomplete="off">
+        <p><label>* Login:</label></p>
+        <input type="text" name="login" id="login" autocomplete="off">
+        <p><label>* Senha:</label></p>
+        <input type="password" name="senha" id="senha">
+        <p><label>* Confirmar senha:</label></p>
+        <input type="password" name="senha2" id="senha2">
+        <p>
+            <button class="subscribe" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">Cadastrar</button>
+        </p>
+    </form>
+    <div class="separator">
+    </div>
+
+    <div class="footer">
+        <p>Desenvolvido por @henridev</p>
+    </div>
+</div>
+</body>
+</html>
