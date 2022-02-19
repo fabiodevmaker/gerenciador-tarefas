@@ -1,4 +1,3 @@
-# gerenciador-tarefas
 <?php
 $saudacoes = "Olá, mundo!";
 
